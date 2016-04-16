@@ -1,32 +1,50 @@
-import {Component} from 'angular2/core';
-import {HTTP_PROVIDERS, Response} from "angular2/http";
-import {CodeService, Folder, Language} from "./code.service";
+import {Component, OnInit} from 'angular2/core';
+import {HTTP_PROVIDERS} from "angular2/http";
 import {ROUTER_DIRECTIVES} from "angular2/router";
-import {Subscription} from "rxjs/Subscription";
-import {Observable} from "rxjs/Observable";
+import {CodeService} from "./code.service";
 import {CodeComponent} from "./code.component";
 
 @Component({
     selector: 'my-app',
     template: `
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="pgttg-nav">Arrays/Lists</li>
-            <li class="pgttg-nav">Arrays/Lists Iteration</li>
-            <li class="pgttg-nav">Command Line Arguments</li>
-            <li class="pgttg-nav">Falsy Values</li>
-            <li class="pgttg-nav">Functions</li>
-            <li class="pgttg-nav">HashMaps</li>
-            <li class="pgttg-nav">HashMaps Iteration</li>
-            <li class="pgttg-nav">Hello World</li>
-            <li class="pgttg-nav">If Statements</li>
-            <li class="pgttg-nav">Interpolation</li>
-            <li class="pgttg-nav">Loop Statements</li>
-            <li class="pgttg-nav">Simple Class</li>
-            <li class="pgttg-nav">Variables</li>
-          </ul>
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Programmer's Guide to the Galaxy</a>
+          </div>
+          <div id="navbar">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language: {{_codeService.currentLanguage.text}} <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li *ngFor="#languageMenuItem of _codeService.languageMenuItems"
+                    (click)="_codeService.updateLanguage(languageMenuItem)">
+                    <a href="#">{{languageMenuItem.text}}</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a target="_blank" href="https://github.com/stuartaroth/programmersguidetothegalaxy">GitHub</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <code-component></code-component>`,
+      </nav>
+      <div class="navbar navbar-inverse navbar-fixed-left">
+        <ul class="nav navbar-nav">
+          <li *ngFor="#folderMenuItem of _codeService.folderMenuItems"
+            [class.active]="folderMenuItem == _codeService.currentFolder"
+            (click)="_codeService.updateFolder(folderMenuItem)">
+            <a href="#">{{folderMenuItem.text}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="container code-container">
+        <code-component></code-component>
+      </div>
+      `,
     directives: [
       ROUTER_DIRECTIVES,
       CodeComponent
@@ -36,8 +54,12 @@ import {CodeComponent} from "./code.component";
       CodeService
     ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(private _codeService:CodeService) {
 
+  }
+
+  ngOnInit():any {
+    this._codeService.updateCode();
   }
 }

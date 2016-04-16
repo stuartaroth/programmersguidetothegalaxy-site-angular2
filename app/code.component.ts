@@ -2,19 +2,23 @@ import {Component, OnInit} from 'angular2/core';
 import {Response} from "angular2/http";
 import {CodeService, Folder, Language} from "./code.service";
 import {Codeblock} from 'ng2-prism/codeblock';
-import {Go} from 'ng2-prism/languages';
+import {Go, Java, Perl, Python, Ruby, Scala, Typescript} from 'ng2-prism/languages';
 
 @Component({
     selector: 'code-component',
-    directives: [Codeblock, Go],
-    template: '<codeblock go>{{_codeService.currentCode}}</codeblock>'
+    directives: [Codeblock, Go, Java, Perl, Python, Ruby, Scala, Typescript],
+    template: `
+    <codeblock *ngIf="_codeService.currentLanguage.text == 'Go'" go>{{_codeService.currentCode}}</codeblock>
+    <codeblock *ngIf="_codeService.currentLanguage.text == 'Java'" java>{{_codeService.currentCode}}</codeblock>
+    <codeblock *ngIf="_codeService.currentLanguage.text == 'Perl'" perl>{{_codeService.currentCode}}</codeblock>
+    <codeblock *ngIf="_codeService.currentLanguage.text == 'Python'" python>{{_codeService.currentCode}}</codeblock>
+    <codeblock *ngIf="_codeService.currentLanguage.text == 'Ruby'" ruby>{{_codeService.currentCode}}</codeblock>
+    <codeblock *ngIf="_codeService.currentLanguage.text == 'Scala'" scala>{{_codeService.currentCode}}</codeblock>
+    <codeblock *ngIf="_codeService.currentLanguage.text == 'TypeScript'" typescript>{{_codeService.currentCode}}</codeblock>
+    `
 })
-export class CodeComponent implements OnInit {
+export class CodeComponent {
   constructor(private _codeService:CodeService) {
 
-  }
-
-  ngOnInit():any {
-    this._codeService.updateCode();
   }
 }
