@@ -1,6 +1,6 @@
 # ProgrammersGuideToTheGalaxy Site
 
-This repository is site that uses the ProgrammersGuideToTheGalaxy code:
+This repository is the site that uses the ProgrammersGuideToTheGalaxy code:
 https://github.com/stuartaroth/programmersguidetothegalaxy
 
 It was created using the Angular 2 quickstart code:
