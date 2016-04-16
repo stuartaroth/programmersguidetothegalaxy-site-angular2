@@ -1,7 +1,10 @@
 # ProgrammersGuideToTheGalaxy Site
 
-This repository is site that uses the ProgrammersGuideToTheGalaxy code: (https://github.com/stuartaroth/programmersguidetothegalaxy)
-It was created using the Angular 2 quickstart code: (https://github.com/angular/quickstart)
+This repository is site that uses the ProgrammersGuideToTheGalaxy code:
+https://github.com/stuartaroth/programmersguidetothegalaxy
+
+It was created using the Angular 2 quickstart code:
+https://github.com/angular/quickstart
 
 Install the npm packages described in the `package.json` and verify that it works:
 
@@ -38,6 +41,10 @@ Here are the test related scripts:
 * `npm test` - compiles, runs and watches the karma unit tests
 * `npm webdriver:update` - ONE TIME update for protractor end-to-end (e2e) tests
 * `npm run e2e` - run protractor e2e tests, written in JavaScript (*e2e-spec.js)
+
+## Contributing
+
+Pull requests are very welcome! When it comes to UI and CSS things I'm far too utilitarian and would love for the site to work/look/feel much better.
 
 ## Testing
 
