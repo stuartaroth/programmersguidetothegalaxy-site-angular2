@@ -19,6 +19,7 @@ export enum Folder {
 }
 
 export enum Language {
+  Dart,
   Go,
   Java,
   JavaScript,
@@ -47,6 +48,8 @@ export class CodeService {
 
   private getLanguage = (language:Language) => {
     switch(language) {
+      case Language.Dart:
+        return "example.dart";
       case Language.Go:
         return "example.go";
       case Language.Java:
@@ -100,6 +103,7 @@ export class CodeService {
   };
 
   languageMenuItems:Array<LanguageMenuItem> = [
+    {language:Language.Dart, text:"Dart"},
     {language:Language.Go, text:"Go"},
     {language:Language.Java, text:"Java"},
     {language:Language.JavaScript, text:"JavaScript"},
@@ -129,7 +133,7 @@ export class CodeService {
  
   getCode = (language:Language, folder:Folder) => this._http.get(`node_modules/programmersguidetothegalaxy/${this.getFolder(folder)}/${this.getLanguage(language)}`);
 
-  currentLanguage:LanguageMenuItem = this.languageMenuItems[0];
+  currentLanguage:LanguageMenuItem = this.languageMenuItems[1];
   currentFolder:FolderMenuItem = this.folderMenuItems[2];
   currentCode:string = "";
   

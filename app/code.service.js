@@ -39,14 +39,15 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
             })(Folder || (Folder = {}));
             exports_1("Folder", Folder);
             (function (Language) {
-                Language[Language["Go"] = 0] = "Go";
-                Language[Language["Java"] = 1] = "Java";
-                Language[Language["JavaScript"] = 2] = "JavaScript";
-                Language[Language["Perl"] = 3] = "Perl";
-                Language[Language["Python"] = 4] = "Python";
-                Language[Language["Ruby"] = 5] = "Ruby";
-                Language[Language["Scala"] = 6] = "Scala";
-                Language[Language["TypeScript"] = 7] = "TypeScript";
+                Language[Language["Dart"] = 0] = "Dart";
+                Language[Language["Go"] = 1] = "Go";
+                Language[Language["Java"] = 2] = "Java";
+                Language[Language["JavaScript"] = 3] = "JavaScript";
+                Language[Language["Perl"] = 4] = "Perl";
+                Language[Language["Python"] = 5] = "Python";
+                Language[Language["Ruby"] = 6] = "Ruby";
+                Language[Language["Scala"] = 7] = "Scala";
+                Language[Language["TypeScript"] = 8] = "TypeScript";
             })(Language || (Language = {}));
             exports_1("Language", Language);
             CodeService = (function () {
@@ -55,6 +56,8 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
                     this._http = _http;
                     this.getLanguage = function (language) {
                         switch (language) {
+                            case Language.Dart:
+                                return "example.dart";
                             case Language.Go:
                                 return "example.go";
                             case Language.Java:
@@ -106,6 +109,7 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
                         }
                     };
                     this.languageMenuItems = [
+                        { language: Language.Dart, text: "Dart" },
                         { language: Language.Go, text: "Go" },
                         { language: Language.Java, text: "Java" },
                         { language: Language.JavaScript, text: "JavaScript" },
@@ -132,7 +136,7 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
                         { folder: Folder.Variables, text: "Variables" }
                     ];
                     this.getCode = function (language, folder) { return _this._http.get("node_modules/programmersguidetothegalaxy/" + _this.getFolder(folder) + "/" + _this.getLanguage(language)); };
-                    this.currentLanguage = this.languageMenuItems[0];
+                    this.currentLanguage = this.languageMenuItems[1];
                     this.currentFolder = this.folderMenuItems[2];
                     this.currentCode = "";
                     this.updateCode = function () {
