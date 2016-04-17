@@ -1,4 +1,4 @@
-System.register(['angular2/core', "angular2/http", "angular2/router", "./code.service", "./code.component"], function(exports_1, context_1) {
+System.register(['angular2/core', "angular2/http", "./code.service", "./code.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', "angular2/http", "angular2/router", "./code.se
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1, router_1, code_service_1, code_component_1;
+    var core_1, http_1, code_service_1, code_component_1;
     var AppComponent;
     return {
         setters:[
@@ -19,9 +19,6 @@ System.register(['angular2/core', "angular2/http", "angular2/router", "./code.se
             },
             function (http_1_1) {
                 http_1 = http_1_1;
-            },
-            function (router_1_1) {
-                router_1 = router_1_1;
             },
             function (code_service_1_1) {
                 code_service_1 = code_service_1_1;
@@ -42,7 +39,6 @@ System.register(['angular2/core', "angular2/http", "angular2/router", "./code.se
                         selector: 'my-app',
                         template: "\n      <nav class=\"navbar navbar-default navbar-static-top\">\n        <div class=\"container\">\n          <div class=\"navbar-header\">\n            <a class=\"navbar-brand\" href=\"#\">Programmer's Guide to the Galaxy</a>\n          </div>\n          <div id=\"navbar\">\n            <ul class=\"nav navbar-nav\">\n              <li class=\"dropdown\">\n                <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Language: {{_codeService.currentLanguage.text}} <span class=\"caret\"></span></a>\n                <ul class=\"dropdown-menu\">\n                  <li *ngFor=\"#languageMenuItem of _codeService.languageMenuItems\"\n                    (click)=\"_codeService.updateLanguage(languageMenuItem)\">\n                    <a href=\"#\">{{languageMenuItem.text}}</a>\n                  </li>\n                </ul>\n              </li>\n            </ul>\n            <ul class=\"nav navbar-nav navbar-right\">\n              <li>\n                <a target=\"_blank\" href=\"https://github.com/stuartaroth/programmersguidetothegalaxy\">GitHub</a>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </nav>\n      <div class=\"navbar navbar-inverse navbar-fixed-left\">\n        <ul class=\"nav navbar-nav\">\n          <li *ngFor=\"#folderMenuItem of _codeService.folderMenuItems\"\n            [class.active]=\"folderMenuItem == _codeService.currentFolder\"\n            (click)=\"_codeService.updateFolder(folderMenuItem)\">\n            <a href=\"#\">{{folderMenuItem.text}}</a>\n          </li>\n        </ul>\n      </div>\n      <div class=\"container code-container\">\n        <code-component></code-component>\n      </div>\n      ",
                         directives: [
-                            router_1.ROUTER_DIRECTIVES,
                             code_component_1.CodeComponent
                         ],
                         providers: [
