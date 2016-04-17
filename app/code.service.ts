@@ -5,6 +5,7 @@ export enum Folder {
   ArraysLists,
   ArraysListsIteration,
   CommandLineArguments,
+  ExtensionMethods,
   FalsyValues,
   Functions,
   HashMaps,
@@ -73,6 +74,8 @@ export class CodeService {
         return "arrays_lists_iteration";
       case Folder.CommandLineArguments:
         return "command_line_arguments";
+      case Folder.ExtensionMethods:
+        return "extension_methods";
       case Folder.FalsyValues:
         return "falsy_values";
       case Folder.Functions:
@@ -112,6 +115,7 @@ export class CodeService {
     {folder:Folder.ArraysListsIteration, text:"Arrays/Lists Iteration"},
     {folder:Folder.SimpleClass, text:"Classes"},
     {folder:Folder.CommandLineArguments, text:"Command Line Arguments"},
+    {folder:Folder.ExtensionMethods, text:"Extension Methods"},
     {folder:Folder.FalsyValues, text:"Falsy Values"},
     {folder:Folder.Functions, text:"Functions"},
     {folder:Folder.HashMaps, text:"Hash Maps"},

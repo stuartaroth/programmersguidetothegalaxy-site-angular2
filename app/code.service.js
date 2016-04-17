@@ -25,16 +25,17 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
                 Folder[Folder["ArraysLists"] = 0] = "ArraysLists";
                 Folder[Folder["ArraysListsIteration"] = 1] = "ArraysListsIteration";
                 Folder[Folder["CommandLineArguments"] = 2] = "CommandLineArguments";
-                Folder[Folder["FalsyValues"] = 3] = "FalsyValues";
-                Folder[Folder["Functions"] = 4] = "Functions";
-                Folder[Folder["HashMaps"] = 5] = "HashMaps";
-                Folder[Folder["HashMapsIteration"] = 6] = "HashMapsIteration";
-                Folder[Folder["HelloWorld"] = 7] = "HelloWorld";
-                Folder[Folder["Ifs"] = 8] = "Ifs";
-                Folder[Folder["Interpolation"] = 9] = "Interpolation";
-                Folder[Folder["Loops"] = 10] = "Loops";
-                Folder[Folder["SimpleClass"] = 11] = "SimpleClass";
-                Folder[Folder["Variables"] = 12] = "Variables";
+                Folder[Folder["ExtensionMethods"] = 3] = "ExtensionMethods";
+                Folder[Folder["FalsyValues"] = 4] = "FalsyValues";
+                Folder[Folder["Functions"] = 5] = "Functions";
+                Folder[Folder["HashMaps"] = 6] = "HashMaps";
+                Folder[Folder["HashMapsIteration"] = 7] = "HashMapsIteration";
+                Folder[Folder["HelloWorld"] = 8] = "HelloWorld";
+                Folder[Folder["Ifs"] = 9] = "Ifs";
+                Folder[Folder["Interpolation"] = 10] = "Interpolation";
+                Folder[Folder["Loops"] = 11] = "Loops";
+                Folder[Folder["SimpleClass"] = 12] = "SimpleClass";
+                Folder[Folder["Variables"] = 13] = "Variables";
             })(Folder || (Folder = {}));
             exports_1("Folder", Folder);
             (function (Language) {
@@ -80,6 +81,8 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
                                 return "arrays_lists_iteration";
                             case Folder.CommandLineArguments:
                                 return "command_line_arguments";
+                            case Folder.ExtensionMethods:
+                                return "extension_methods";
                             case Folder.FalsyValues:
                                 return "falsy_values";
                             case Folder.Functions:
@@ -117,6 +120,7 @@ System.register(['angular2/core', 'angular2/http'], function(exports_1, context_
                         { folder: Folder.ArraysListsIteration, text: "Arrays/Lists Iteration" },
                         { folder: Folder.SimpleClass, text: "Classes" },
                         { folder: Folder.CommandLineArguments, text: "Command Line Arguments" },
+                        { folder: Folder.ExtensionMethods, text: "Extension Methods" },
                         { folder: Folder.FalsyValues, text: "Falsy Values" },
                         { folder: Folder.Functions, text: "Functions" },
                         { folder: Folder.HashMaps, text: "Hash Maps" },
