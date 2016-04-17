@@ -34,7 +34,7 @@ System.register(['angular2/core', "./code.service", 'ng2-prism/codeblock', 'ng2-
                 CodeComponent = __decorate([
                     core_1.Component({
                         selector: 'code-component',
-                        directives: [codeblock_1.Codeblock, languages_1.Go, languages_1.Java, languages_1.Javascript, languages_1.Python, languages_1.Ruby, languages_1.Scala, languages_1.Typescript],
+                        directives: [codeblock_1.Codeblock, languages_1.Go, languages_1.Java, languages_1.Javascript, languages_1.Perl, languages_1.Python, languages_1.Ruby, languages_1.Scala, languages_1.Typescript],
                         template: "\n    <codeblock *ngIf=\"_codeService.currentLanguage.text == 'Go'\" go>{{_codeService.currentCode}}</codeblock>\n    <codeblock *ngIf=\"_codeService.currentLanguage.text == 'Java'\" java>{{_codeService.currentCode}}</codeblock>\n    <codeblock *ngIf=\"_codeService.currentLanguage.text == 'JavaScript'\" javascript>{{_codeService.currentCode}}</codeblock>\n    <codeblock *ngIf=\"_codeService.currentLanguage.text == 'Perl'\" perl>{{_codeService.currentCode}}</codeblock>\n    <codeblock *ngIf=\"_codeService.currentLanguage.text == 'Python'\" python>{{_codeService.currentCode}}</codeblock>\n    <codeblock *ngIf=\"_codeService.currentLanguage.text == 'Ruby'\" ruby>{{_codeService.currentCode}}</codeblock>\n    <codeblock *ngIf=\"_codeService.currentLanguage.text == 'Scala'\" scala>{{_codeService.currentCode}}</codeblock>\n    <codeblock *ngIf=\"_codeService.currentLanguage.text == 'TypeScript'\" typescript>{{_codeService.currentCode}}</codeblock>\n    "
                     }), 
                     __metadata('design:paramtypes', [code_service_1.CodeService])
