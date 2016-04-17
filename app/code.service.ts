@@ -20,6 +20,7 @@ export enum Folder {
 export enum Language {
   Go,
   Java,
+  JavaScript,
   Perl,
   Python,
   Ruby,
@@ -49,6 +50,8 @@ export class CodeService {
         return "example.go";
       case Language.Java:
         return "Example.java";
+      case Language.JavaScript:
+        return "exampleJs.js";
       case Language.Perl:
         return "example.pl";
       case Language.Python:
@@ -96,6 +99,7 @@ export class CodeService {
   languageMenuItems:Array<LanguageMenuItem> = [
     {language:Language.Go, text:"Go"},
     {language:Language.Java, text:"Java"},
+    {language:Language.JavaScript, text:"JavaScript"},
     {language:Language.Perl, text:"Perl"},
     {language:Language.Python, text:"Python"},
     {language:Language.Ruby, text:"Ruby"},
